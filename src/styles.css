@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #54389E;
+  --white: #ffffff;
+}
+.form-control:focus {
+    border-color: #54389E;
+    box-shadow: 0 0 0 0.2rem rgba(117, 102, 184, 0.151);
+}
+.form-select:focus {
+  border-color: #54389E;
+  box-shadow: 0 0 0 0.2rem rgba(117, 102, 184, 0.151);
+}
