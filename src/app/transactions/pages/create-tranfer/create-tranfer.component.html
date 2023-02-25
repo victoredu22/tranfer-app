@@ -52,18 +52,18 @@
           </div>
         </div>
 
-        <div class="row mt-4">
+        <div class="row mt-4"  *ngIf="formTransfer">
           <div
             class="col-sx-12 col-md-5 resumeProfile p-4 rounded"
             [ngStyle]="{ float: 'none', margin: 'auto' }"
-            *ngIf="selectedUser"
+            *ngIf="formTransfer.value.selectedUser"
           >
-            <p [ngStyle]="{ 'font-weight': 'bold' }">{{ selectedUser.name }}</p>
-            <span>{{ selectedUser.email }}</span>
+            <p [ngStyle]="{ 'font-weight': 'bold' }">{{ formTransfer.value.selectedUser.name }}</p>
+            <span>{{ formTransfer.value.selectedUser.email }}</span>
             <br />
-            <span>{{ selectedUser.bank }}</span>
+            <span>{{ formTransfer.value.selectedUser.bank }}</span>
             <br />
-            <span>{{ selectedUser.numberAccount }}</span>
+            <span>{{ formTransfer.value.selectedUser.numberAccount }}</span>
           </div>
         </div>
 

@@ -4,12 +4,13 @@ import { Observable } from 'rxjs';
 import { Payees } from '../interface/payees.interface';
 import { bank } from '../interface/bank.interface';
 import { Tranfer } from '../interface/tranfer.interface';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TransactionsService {
-  private baseUrl: string = 'https://node-tranfer.herokuapp.com/api';
+  private baseUrl: string = environment.baseUrl;
 
   constructor(private http: HttpClient) {}
 

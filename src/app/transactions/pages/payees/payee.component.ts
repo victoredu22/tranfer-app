@@ -7,6 +7,7 @@ import {
   AbstractControl,
 } from '@angular/forms';
 
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-payee',
@@ -20,6 +21,7 @@ export class PayeeComponent implements OnInit {
 
   constructor(
     private transactionService: TransactionsService,
+    private router: Router,
     private fb: FormBuilder,
   ) {}
   formPayees: FormGroup = this.fb.group({
@@ -49,5 +51,7 @@ export class PayeeComponent implements OnInit {
      this.transactionService
        .createBank(this.formPayees.value)
        .subscribe((resp) => console.log(resp));
+
+      this.router.navigate(['/nueva-tranferencia']);
   }
 }

@@ -21,6 +21,7 @@ const routes: Routes = [
         path: 'historial',
         component: ListTranferComponent
       },
+      { path: '**', redirectTo: 'historial' }
     ],
   },
 ];

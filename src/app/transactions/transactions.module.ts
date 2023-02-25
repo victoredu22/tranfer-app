@@ -8,7 +8,7 @@ import { CreateTranferComponent } from './pages/create-tranfer/create-tranfer.co
 
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import { ListTranferComponent } from './pages/list-tranfer/list-tranfer.component';
-
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,6 +21,7 @@ import { ListTranferComponent } from './pages/list-tranfer/list-tranfer.componen
     TransactionsRoutingModule,
     ReactiveFormsModule,
     AutocompleteLibModule
-  ]
+  ],
+  exports: [RouterModule],
 })
 export class TransactionsModule { }

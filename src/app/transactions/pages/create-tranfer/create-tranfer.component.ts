@@ -7,7 +7,7 @@ import {
   FormGroup,
   AbstractControl,
 } from '@angular/forms';
-
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-create-tranfer',
   templateUrl: './create-tranfer.component.html',
@@ -15,7 +15,9 @@ import {
 export class CreateTranferComponent implements OnInit {
   constructor(
     private transactionService: TransactionsService,
+    private router: Router,
     private fb: FormBuilder
+    
   ) {}
 
   formTransfer: FormGroup = this.fb.group({
@@ -41,10 +43,12 @@ export class CreateTranferComponent implements OnInit {
 
   selectEvent(item: any) {
     const { email } = item;
+
     this.transactionService
       .getPayesByEmail(email)
       .subscribe((resp) =>
-        this.formTransfer.patchValue({ selectedUser: resp })
+
+      this.formTransfer.patchValue({ selectedUser: resp })
       );
   }
 
@@ -62,5 +66,6 @@ export class CreateTranferComponent implements OnInit {
     this.transactionService
       .createTranfer(data)
       .subscribe((resp) => console.log(resp));
+      this.router.navigate(['/historial']);
   }
 }

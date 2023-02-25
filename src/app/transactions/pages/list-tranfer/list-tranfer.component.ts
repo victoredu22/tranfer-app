@@ -30,8 +30,10 @@ export class ListTranferComponent implements OnInit {
   }
 
   typeBank(arg: number){
+    if(this.listBank.code){
     const type = this.listBank.find((bank: bank) =>bank.code === arg);
     return type.name
+    }
   }
   ngOnInit(): void {
     this.transactionService
