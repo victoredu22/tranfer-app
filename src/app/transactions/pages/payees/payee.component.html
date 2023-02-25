@@ -21,10 +21,11 @@
               class="form-control"
               placeholder="Rut"
               formControlName="rut"
+      
             />
             <div *ngIf="f['rut'].errors">
               <span
-                *ngIf="f['rut'].errors['rutnovalido']"
+                *ngIf="f['rut'].errors['pattern']"
                 class="form-text text-danger"
               >
                 El rut no es valido

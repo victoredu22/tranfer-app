@@ -6,7 +6,7 @@ import {
   Validators,
   AbstractControl,
 } from '@angular/forms';
-import { RutService } from 'rut-chileno';
+
 
 @Component({
   selector: 'app-payee',
@@ -16,14 +16,14 @@ export class PayeeComponent implements OnInit {
   nombreApellidoPattern: string = '([a-zA-Z]+) ([a-zA-Z]+)';
   email: string ="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" ;
   phone: string = "^[0-9]{8}$";
+  rut: string = "^[0-9]+-[0-9kK]{1}$"
 
   constructor(
     private transactionService: TransactionsService,
     private fb: FormBuilder,
-    private rutService: RutService
   ) {}
   formPayees: FormGroup = this.fb.group({
-    rut: ['', [Validators.required, this.rutService.validaRutForm]],
+    rut: ['', [Validators.required, Validators.pattern(this.rut)]],
     name: [null, [Validators.required, Validators.minLength(3)]],
     email: ['', [Validators.required, Validators.pattern(this.email)]],
     phone: ['', [Validators.required, Validators.pattern(this.phone)]],
@@ -44,12 +44,6 @@ export class PayeeComponent implements OnInit {
       .subscribe((resp) => (this.listBank = resp));
   }
 
-  campoNoValido(campo: string) {
-    console.log(campo);
-    return (
-      this.formPayees.get(campo)?.invalid && this.formPayees.get(campo)?.touched
-    );
-  }
 
   guardar() {
      this.transactionService

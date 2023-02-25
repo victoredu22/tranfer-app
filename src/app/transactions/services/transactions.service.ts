@@ -9,7 +9,7 @@ import { Tranfer } from '../interface/tranfer.interface';
   providedIn: 'root',
 })
 export class TransactionsService {
-  private baseUrl: string = 'http://localhost:3000/api';
+  private baseUrl: string = 'https://node-tranfer.herokuapp.com/api';
 
   constructor(private http: HttpClient) {}
 
