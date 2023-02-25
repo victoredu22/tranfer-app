@@ -11,3 +11,16 @@
   border-color: #54389E;
   box-shadow: 0 0 0 0.2rem rgba(117, 102, 184, 0.151);
 }
+body{
+  background-color: #F5F9FB;
+}
+
+.contenData{
+  background-color: white;
+  box-shadow: 0 2px 4px #00000026;
+}
+
+.resumeProfile{
+  background-color: #F5F7FF;
+
+}

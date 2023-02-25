@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="col-lg-8" [ngStyle]="{ float: 'none', margin: 'auto' }">
+
+    <div class="mt-3 p-4 col-sx-12 contenData">
+      <h3>Historial</h3>
+      <small class="text-muted"
+      >Este es tu listado de tranferencia a la
+      <span [ngStyle]="{ color: 'var(--primary)', 'font-weight': '500' }"
+        >fecha</span
+      ><span [ngStyle]="{ color: 'var(--primary)' }">!</span></small
+    >
+      <table class="table mt-4">
+        <thead>
+          <tr>
+            <th scope="col">Nombre destinatario</th>
+            <th scope="col">Rut</th>
+            <th scope="col">Banco</th>
+            <th scope="col">Tipo Cuenta</th>
+            <th scope="col">monto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tranfer of tranfer">
+            <td>{{tranfer.payee.name}}</td>
+            <td>{{tranfer.payee.rut}}</td>
+            <td >{{typeBank(tranfer.payee.bank)}}</td>
+            <td>{{typeAccount(tranfer.payee.typeAccount)}}</td>
+            <td>${{tranfer.amount}}</td>
+          </tr>
+      
+        </tbody>
+      </table>
+      
+      </div>
+</div>
+</div>

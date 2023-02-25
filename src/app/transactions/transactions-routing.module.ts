@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PayeeComponent } from './payee/payee.component';
+import { CreateTranferComponent } from './pages/create-tranfer/create-tranfer.component';
+import { ListTranferComponent } from './pages/list-tranfer/list-tranfer.component';
+import { PayeeComponent } from './pages/payees/payee.component';
+
 
 const routes: Routes = [
   {
@@ -9,6 +12,14 @@ const routes: Routes = [
       {
         path: 'nuevo-destinatario',
         component: PayeeComponent,
+      },
+      {
+        path: 'nueva-tranferencia',
+        component: CreateTranferComponent
+      },
+      {
+        path: 'historial',
+        component: ListTranferComponent
       },
     ],
   },

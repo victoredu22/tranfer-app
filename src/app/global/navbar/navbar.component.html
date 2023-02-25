@@ -1,1 +1,25 @@
-<p>navbar works!</p>
+<div class="container mt-5">
+  <div class="col-lg-8" [ngStyle]="{ float: 'none', margin: 'auto' }">
+<nav class="navbar navbar-light light contenData">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/historial">Mi Banco </a>
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+
+    <a href="/nuevo-destinatario" type="button" class="btn">Nuevo Destino</a>
+    <a href="/nueva-tranferencia" type="button" class="btn">Tranferir</a>
+    <a href="/historial" type="button" class="btn">Historial</a>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </div>
+    </div>
+  </div>
+</nav>
+</div>
+</div>

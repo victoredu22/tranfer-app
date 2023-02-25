@@ -1,0 +1,162 @@
+<div class="container">
+  <div class="col-lg-8" [ngStyle]="{ float: 'none', margin: 'auto' }">
+    <!-- <h2>Form valid</h2>
+    <pre>{{ formPayees.valid }}</pre> -->
+    <div class="mt-3 p-4 col-sx-12 contenData">
+      <form autocomplete="off" [formGroup]="formPayees" (ngSubmit)="guardar()">
+        <h3>Nuevo Destinatario</h3>
+        <small class="text-muted"
+          >Aqui deberas agregar datos de tu nuevo
+          <span [ngStyle]="{ color: 'var(--primary)', 'font-weight': '500' }"
+            >contacto</span
+          ><span [ngStyle]="{ color: 'var(--primary)' }">.</span></small
+        >
+  
+        <div class="row mt-3">
+          <!-- rut -->
+          <div class="col-sx-12 col-md-6">
+            <label class="mt-3" for="rut">Rut</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Rut"
+              formControlName="rut"
+            />
+            <div *ngIf="f['rut'].errors">
+              <span
+                *ngIf="f['rut'].errors['rutnovalido']"
+                class="form-text text-danger"
+              >
+                El rut no es valido
+              </span>
+            </div>
+          </div>
+          <!-- name -->
+          <div class="col-sx-12 col-md-6">
+            <label class="mt-3" for="rut">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Nombre o alias"
+              formControlName="name"
+            />
+            <div *ngIf="f['name'].errors">
+              <span
+                *ngIf="f['name'].errors['minlength']"
+                class="form-text text-danger"
+                >El nombre debe ser minimo 3 letras</span
+              >
+  
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <!-- correo -->
+         <div class="col-sx-12 col-md-6">
+            <label class="mt-3" for="rut">Correo</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Email (opcional)"
+              formControlName="email"
+            />
+  
+            <div *ngIf="f['email'].errors">
+              <span
+                *ngIf="f['email'].errors['pattern']"
+                class="form-text text-danger"
+              >
+                El correo es invalido
+              </span>
+            </div>
+          </div> 
+          <!-- telefono -->
+          <div class="col-sx-12 col-md-6 ">
+            <label class="mt-3" for="rut">Telefono</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">+569</span>
+              <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Telefono" 
+                formControlName="phone"
+              />
+            </div> 
+            <div *ngIf="f['phone'].errors">
+              <span
+                *ngIf="f['phone'].errors['pattern']"
+                class="form-text text-danger"
+              >
+                Debe tener un minimo de 8 digitos
+              </span>
+            </div>
+          </div>  
+        </div>
+        <div class="row mt-3">
+        <div class="col-sx-12 col-md-6">
+            <label class="mt-3" for="rut">Banco</label>
+            <select 
+              class="form-select" 
+              formControlName="bank" 
+              aria-label="Default select example"
+             
+            >
+            <option selected value="0">Selecciona banco</option>
+              <option  *ngFor="let bank of listBank" [value]="bank.code" >{{bank.name}}</option>
+            </select>
+          </div>  
+          <div class="col-sx-12 col-md-6">
+            <label class="mt-3" for="rut">Tipo Cuenta</label>
+            <select 
+              class="form-select" 
+              formControlName="typeAccount"   
+            >
+              <option selected value="0">Tipo Cuenta</option>
+              <option value="1">Corriente</option>
+              <option value="2">Vista</option>
+              <option value="3">Ahorro</option>
+              <option value="4">Chequera electronica</option>
+            </select>
+          </div> 
+        </div>
+        <div class="row mt-2">
+          <div class="col-sx-12 col-md-6">
+            <label class="mt-3" for="rut">N° De Cuenta</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Número de cuenta"
+              formControlName="numberAccount"
+            />
+          </div>
+          <div *ngIf="f['numberAccount'].errors">
+            <span
+              *ngIf="f['numberAccount'].errors['minlength']"
+              class="form-text text-danger"
+              >El numero de cuenta debe ser minimo 3 digitos</span
+            >
+
+          </div>
+        </div> 
+        <div class="row mt-5 col-5" [ngStyle]="{ float: 'none', margin: 'auto' }">
+          <button
+            class="btn btn-primary"
+            type="submit"
+            [ngStyle]="{
+              backgroundColor: 'var(--primary)',
+              border: 'var(--primary)'
+            }"
+          
+            [disabled]="!formPayees.valid"
+            [disabled]="!formPayees.valid"
+          >
+            Guardar Contacto
+          </button>
+        </div>
+      </form>
+    </div>
+   
+  </div>
+</div>
+
+
