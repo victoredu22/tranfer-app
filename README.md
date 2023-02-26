@@ -12,7 +12,7 @@ distintos usuarios, creados previamente. Ademas cuenta con un listado que muestr
 
 - Bootstrap 5 como framework de css 
 - Typescript organización de código
-- Heroku visualización proyecto
+- Vercel visualización proyecto
 
 ### Requisitos previos:
 
