@@ -20,7 +20,7 @@ distintos usuarios, creados previamente. Ademas cuenta con un listado que muestr
 - npm el manejador de paquetes
 - angular framerwork js
 
-### Se clona el repositorio
+### Clonación repositorio
 
 ```bash  
 git clone git@github.com:victoredu22/tranfer-app.git
